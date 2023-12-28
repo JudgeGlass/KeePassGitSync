@@ -39,7 +39,7 @@ def get_repo_name() -> str:
     REPO_URL = get_config_attrib("repoURL")
     return REPO_URL[REPO_URL.index('/') : len(REPO_URL) - 4]
 
-CWD_REPO: str = f"{CWD}{get_repo_name()}"
+CWD_REPO: str = f"{get_config_attrib('location')}{get_repo_name()}"
 
 def clone_repo() -> None:
     REPO_URL = get_config_attrib("repoURL")
