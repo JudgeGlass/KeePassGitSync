@@ -1,0 +1,7 @@
+{
+	"repoURL": "git@github.com:JudgeGlass/KeePassTest.git",
+	"databaseFile": "KeePass_Database.kdbx",
+	"location": "/home/judgeglass/Documents/",
+	"updateFrequency": 5.0,
+	"showMessages": true
+}
