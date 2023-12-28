@@ -43,7 +43,7 @@ CWD_REPO: str = f"{get_config_attrib('location')}{get_repo_name()}"
 
 def clone_repo() -> None:
     REPO_URL = get_config_attrib("repoURL")
-    print(f"Cloneing repo: {REPO_URL}")
+    print(f"Cloning repo: {REPO_URL}")
     global repo
     repo = Repo.clone_from(REPO_URL, CWD_REPO)
 
@@ -71,7 +71,6 @@ def start_watchdog() -> None:
 
 def main() -> None:
     print("KeePassGitSync tool. By Hunter Wilcox")
-    show_message("test", CWD)
     try:
         if check_dir_exists(CWD_REPO):
             print("Repo already cloned. Pulling...")
