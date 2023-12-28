@@ -70,6 +70,7 @@ def start_watchdog() -> None:
 
 
 def main() -> None:
+    global repo
     print("KeePassGitSync tool. By Hunter Wilcox")
     try:
         if check_dir_exists(CWD_REPO):
