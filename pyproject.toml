@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "KeePassGitSync"
+version = "0.1.0"
+description = ""
+authors = ["Hunter Wilcox <hunter.wilcox@judgeglass.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tk = "0.1.0"
+gitpython = "3.1.40"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kpg_sync = "keepassgitsync.console:main"
