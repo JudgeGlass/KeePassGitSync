@@ -1,7 +1,11 @@
 """ CONSOLE """
 
+#
 # Copyright (c) 2023 Hunter Wilcox
 # https://www.judgeglass.net
+#
+# This program can probably used for other files other than KeePass related stuff
+#
 
 import logging
 import argparse
