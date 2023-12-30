@@ -3,11 +3,19 @@
 from keepassgitsync import CWD
 
 import json
+import logging
 
 def load_config(args: {}) -> {}:
     config_data = {}
 
-    with open(f"{CWD}/config.json") as config_json:
+    config_location = f"{CWD}/config.json"
+
+    if args['config']:
+        config_location = args['config']
+
+    logging.info(f"Using config file. ('{config_location}')")
+
+    with open(config_location) as config_json:
         config_data = json.load(config_json)
 
     if args != None:
@@ -17,7 +25,8 @@ def load_config(args: {}) -> {}:
     
 def load_config_cmd_args(config: {}, args: {}) -> {}:
     for arg in args:
-        config[arg] = args[arg]
+        if args[arg]:
+            config[arg] = args[arg]
 
     return config
     

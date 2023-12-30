@@ -4,6 +4,7 @@ from keepassgitsync import HOSTNAME
 from git import Repo
 
 def clone_repo(config: {}) -> Repo:
+    REPO_URL = config["repoURL"]
     logging.info(f"Cloning repo: {REPO_URL}")
     REPO_URL = config["repoURL"]
     return Repo.clone_from(REPO_URL, config['CWD_REPO'])
@@ -22,4 +23,4 @@ def push_commit(files: [], repo: Repo):
 
 def get_repo_name(config: {}) -> str:
     REPO_URL = config["repoURL"]
-    return REPO_URL[REPO_URL.index('/') : len(REPO_URL) - 4]
+    return REPO_URL[REPO_URL.index('/') + 1: len(REPO_URL) - 4]

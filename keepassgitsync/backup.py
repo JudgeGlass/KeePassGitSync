@@ -17,15 +17,17 @@ def start_watchdog() -> None:
     DATABASE_FILE = config["databaseFile"]
     init_filesize: int = path.getsize(f"{config['CWD_REPO']}/{DATABASE_FILE}")
 
-    logging.info("Checking for database changes...")
+    logging.info("Waiting for database changes...")
     while True:
         current_filesize: int = path.getsize(f"{config['CWD_REPO']}/{DATABASE_FILE}")
 
         if init_filesize != current_filesize and current_filesize > 0:
             logging.info(f"'{DATABASE_FILE}' has changed!")
-            push_commit([DATABASE_FILE], repo)
             
+            push_commit([DATABASE_FILE], repo)
             init_filesize = current_filesize
+
+            logging.info("Waiting for database changes...")
 
         time.sleep(config["updateFrequency"])
 
