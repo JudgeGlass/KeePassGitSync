@@ -120,14 +120,6 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-name = "tk"
-version = "0.1.0"
-description = "TensorKit is a deep learning helper between Python and C++."
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "wcwidth"
 version = "0.2.12"
 description = "Measures the displayed width of unicode strings in a terminal"
@@ -138,7 +130,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1caa3051635feb956c851ec45cbc4f6cf0732d741137f2f4831fa7e5a4e804cb"
+content-hash = "2ccf6e7bf2f3bbf6742f028e222e5c616e3d86c6e958afe5d8600123ccbbe849"
 
 [metadata.files]
 atomicwrites = []
@@ -152,5 +144,4 @@ pluggy = []
 py = []
 pytest = []
 smmap = []
-tk = []
 wcwidth = []
