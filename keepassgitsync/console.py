@@ -19,6 +19,7 @@ def arg_handler() -> {}:
     parser = argparse.ArgumentParser(prog='KeePassGitSync', description='A tool that sync your KeePass database to a git repository')
     parser.add_argument('-V', '--verison', action='version', version="%(prog)s {version}".format(version=importlib.metadata.version('keepassgitsync')))
     parser.add_argument('-c', '--config', type=str, help="The JSON config file")
+    parser.add_argument("--log", type=str, help="Log location (default: ./output.log)", default="./output.log")
 
     parser.add_argument('-r', '--repoURL', type=str, help="SSH URL/Address to git repository", required="--config" not in sys.argv)
     parser.add_argument('-d', '--databaseFile', type=str, help="The name of the KeePass database file in the repository", required="--config" not in sys.argv)
@@ -36,7 +37,7 @@ def main():
     print("KeePassGitSync, by Hunter Wilcox. Visit https://judgeglass.net/")
     print(f"\nLogging to {CWD}/output.log\n")
 
-    logging.basicConfig(format="%(asctime)s [%(levelname)s]: %(message)s", filename='output.log', filemode='w', level=logging.INFO)
+    logging.basicConfig(format="%(asctime)s [%(levelname)s]: %(message)s", filename=args['log'], filemode='w', level=logging.INFO)
 
     try:
         init_config(args)

@@ -1,5 +1,7 @@
  Byte-compiled / optimized / DLL files
 __pycache__/
+./keepassgitsync/__pycache__/
+poetry.lock
 *.py[cod]
 
 # C extensions
